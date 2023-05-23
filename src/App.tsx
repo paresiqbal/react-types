@@ -1,10 +1,11 @@
 import "./App.css";
+import Heading from "./components/Heading";
 
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <div>
+      <Heading title="React Types" />
+    </div>
   );
 }
 
