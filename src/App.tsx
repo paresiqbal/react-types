@@ -1,4 +1,5 @@
 import "./App.css";
+import Counter from "./components/Counter";
 import Heading from "./components/Heading";
 import Section from "./components/Section";
 
@@ -7,6 +8,9 @@ function App() {
     <div>
       <Heading title="React Typescript" />
       <Section title="Section Title">Hei guys trying use Typescript</Section>
+      <div>
+        <Counter />
+      </div>
     </div>
   );
 }
