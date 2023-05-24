@@ -30,16 +30,16 @@ export default function Counter() {
     return () => console.log("Unmounting");
   }, [users]);
 
-  const addOne = useCallback(() => setCount((prev) => prev + 1), []);
-  const decreaseOne = useCallback(() => setCount((prev) => prev - 1), []);
+  const increment = useCallback(() => setCount((prev) => prev + 1), []);
+  const decrement = useCallback(() => setCount((prev) => prev - 1), []);
 
   const result = useMemo<number>(() => fib(myNumb), [myNumb]);
 
   return (
     <div>
       <h1>Count is {count}</h1>
-      <button onClick={addOne}>+</button>
-      <button onClick={decreaseOne}>-</button>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
       <h2>{result}</h2>
       <input type="text" ref={inputRef} />
     </div>
