@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 interface User {
   id: number;
@@ -18,6 +18,11 @@ export default function Counter() {
   const [count, setCount] = useState<number>(1);
   const [users, setUsers] = useState<User[] | null>(null);
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  console.log(inputRef?.current);
+  console.log(inputRef?.current?.value);
+
   useEffect(() => {
     console.log("Mounting");
     console.log("User", users);
@@ -36,6 +41,7 @@ export default function Counter() {
       <button onClick={addOne}>+</button>
       <button onClick={decreaseOne}>-</button>
       <h2>{result}</h2>
+      <input type="text" ref={inputRef} />
     </div>
   );
 }
